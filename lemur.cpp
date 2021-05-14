@@ -3,10 +3,8 @@
 Lemur::Lemur(std::string n, int a) : Animal(n, a) {
 }
 
-Lemur& Lemur::operator=(const Lemur &source) {
-    *this = source;
+Lemur::Lemur() {
 
-    return *this;
 }
 
 int Lemur::getRevenue() const {

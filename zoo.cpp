@@ -1,15 +1,18 @@
 #include "zoo.h"
 
 Zoo::Zoo() {
-    std::string 
+    string
     prompt1 = "Which animals would you like to start with?\n",
     prompt2 = "(1) Lemur - $700 * 2\n",
     prompt3 = "(2) Tiger - $15000 * 2\n",
     prompt4 = "(3) Black Bear - $6000 * 2\n";
 
     int temp = getIntBounds(prompt1 + prompt2 + prompt3 + prompt4, 1, 3);
-
-    std::string* names = getNames();
+    cout << endl;
+    string names[2] {
+        getRandName(),
+        getRandName()
+    };
 
     switch (temp) {
         case 1:
@@ -28,9 +31,6 @@ Zoo::Zoo() {
             money -= 12000;
             break;
     }
-
-    delete [] names;
-    names = NULL;
 }
 
 Zoo& Zoo::operator=(const Zoo &source) {
@@ -52,18 +52,6 @@ Zoo::~Zoo() {
     lemurs = NULL;
     tigers = NULL;
     bBears = NULL;
-}
-
-std::string* Zoo::getNames() {
-    std::string* names = new std::string[2];
-
-    std::cout << "Enter Name for the first animal: \n";
-    std::cin >> names[0];
-
-    std::cout << "Enter name for second animal: \n";
-    std::cin >> names[1];
-
-    return names;
 }
 
 void Zoo::copyLemurs(Lemur* s, const int &n) {
@@ -106,4 +94,59 @@ int Zoo::getNumTigers() const {
 
 int Zoo::getNumBBears() const {
     return numBBears;
+}
+
+void Zoo::showAnimals() const {
+    cout << getNumLemurs() << " Lemurs:\n";
+    showLemurs();
+    cout << endl;
+
+    cout << getNumTigers() << " Tigers:\n";
+    showTigers();
+    cout << endl;
+
+    cout << getNumBBears() << " Black Bears:\n";
+    showBBears();
+    cout << endl;
+}
+
+void Zoo::showLemurs() const {
+    for (int i = 0; i < numLemurs; i++) {
+        cout << "Age: " << lemurs[i].getAge() 
+        << "\tFood Cost: " << lemurs[i].getFoodCost()
+        << "\tName: " << lemurs[i].getName() << endl;
+    }
+}
+
+void Zoo::showTigers() const {
+    for (int i = 0; i < numTigers; i++) {
+        cout << "Age: " << tigers[i].getAge() 
+        << "\tFood Cost: " << tigers[i].getFoodCost()
+        << "\tName: " << tigers[i].getName() << endl;
+    }
+}
+
+void Zoo::showBBears() const {
+    for (int i = 0; i < numBBears; i++) {
+        cout << "Age: " << bBears[i].getAge() 
+        << "\tFood Cost: " << bBears[i].getFoodCost()
+        << "\tName: " << bBears[i].getName() << endl;
+    }
+}
+
+void Zoo::advanceMonth() {
+    int
+    costs = 0,
+    revenue = 0;
+
+    for (int i = 0; i < numLemurs; i++)
+        lemurs[i].advanceMonth(costs, revenue, money);
+
+    for (int i = 0; i < numTigers; i++)
+        tigers[i].advanceMonth(costs, revenue, money);
+
+    for (int i = 0; i < numBBears; i++)
+        bBears[i].advanceMonth(costs, revenue, money);
+
+    money += revenue - costs;
 }

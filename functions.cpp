@@ -29,3 +29,17 @@ int getIntBounds(std::string prompt, int a, int b) {
 
     return input;
 }
+
+std::string getRandName() {
+    std::ifstream list("names.txt");
+    std::string temp;
+
+    int randInt = rand() % 256;
+
+    for (int i = 0; i <= randInt; i++)
+        list >> temp;
+
+    list.close();
+
+    return temp;
+}

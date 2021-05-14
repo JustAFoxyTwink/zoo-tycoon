@@ -21,7 +21,7 @@ class Animal {
     };
 
     Animal(std::string n, int a=0);
-    Animal& operator=(const Animal& source);
+    Animal();
 
     int getAge() const;
     void setAge(int a);

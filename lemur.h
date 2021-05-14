@@ -9,7 +9,6 @@ class Lemur : public Animal {
         static const int revenue = 140;
     public:
         Lemur();
-        Lemur& operator=(const Lemur &source);
         Lemur(std::string n, int a=0);
 
         int getRevenue() const;

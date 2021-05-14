@@ -5,16 +5,8 @@ Animal::Animal(std::string n, int a) {
     name = n;
 }
 
-Animal& Animal::operator=(const Animal& source) {
-    if (this == &source)
-        return *this;
-    
-    age = source.getAge();
-    foodCost = source.getFoodCost();
-    source.checkHealth(isSick, isDead);
-    name = source.getName();
+Animal::Animal() {
 
-    return *this;
 }
 
 int Animal::getAge() const {

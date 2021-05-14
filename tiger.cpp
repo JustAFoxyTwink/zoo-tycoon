@@ -3,6 +3,10 @@
 Tiger::Tiger(std::string n, int a) : Animal(n, a) {
 }
 
+Tiger::Tiger() {
+
+}
+
 int Tiger::getRevenue() const {
     return revenue;
 }

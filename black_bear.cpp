@@ -4,6 +4,10 @@ BlackBear::BlackBear(std::string n, int a) : Animal(n, a) {
     
 }
 
+BlackBear::BlackBear() {
+    
+}
+
 int BlackBear::getRevenue() const {
     return revenue;
 }

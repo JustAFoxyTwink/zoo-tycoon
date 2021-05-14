@@ -9,14 +9,17 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Zoo {
     private:
-
         int numLemurs = 0;
         int numTigers = 0;
         int numBBears = 0;
+        Lemur* lemurs = NULL;
+        Tiger* tigers = NULL;
+        BlackBear* bBears = NULL;
 
-        std::string* getNames();
         void copyLemurs(Lemur* s, const int &n);
         void copyTigers(Tiger* s, const int &n);
         void copyBBears(BlackBear* s, const int &n);
@@ -28,13 +31,16 @@ class Zoo {
         Zoo& operator=(const Zoo &source);
         ~Zoo();
 
-        Lemur* lemurs = NULL;
-        Tiger* tigers = NULL;
-        BlackBear* bBears = NULL;
-
         int getNumLemurs() const;
         int getNumTigers() const;
         int getNumBBears() const;
+
+        void showAnimals() const;
+        void showLemurs() const;
+        void showTigers() const;
+        void showBBears() const;
+
+        void advanceMonth();
 };
 
 #endif
