@@ -1,3 +1,12 @@
+/********************************************************
+ * Program Filename: lemur.h
+ * Author: Evan Garrison
+ * Date: 05/14/2021
+ * Description: Lemur class header file
+ * Input: Lemur name, class, bank size
+ * Output: Lemur status, price, revenue generated.
+ ********************************************************/
+
 #ifndef LEMUR_H
 #define LEMUR_H
 

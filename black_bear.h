@@ -1,3 +1,12 @@
+/********************************************************
+ * Program Filename: black_bear.h
+ * Author: Evan Garrison
+ * Date: 05/14/2021
+ * Description: Header file for BlackBear class
+ * Input: Name, age of bear, current costs and bank size
+ * Output: Revenue, price of bear
+ ********************************************************/
+
 #ifndef BLACK_BEAR_H
 #define BLACK_BEAR_H
 

@@ -1,3 +1,12 @@
+/********************************************************
+ * Program Filename: tiger.h
+ * Author: Evan Garrison
+ * Date: 05/14/2021
+ * Description: Tiger class header file
+ * Input: Tiger name, class, bank size
+ * Output: Tiger status, price, revenue generated.
+ ********************************************************/
+
 #ifndef TIGER_H
 #define TIGER_H
 

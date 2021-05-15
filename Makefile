@@ -1,12 +1,9 @@
 
-output: zoo_tycoon.o functions.o animal.o lemur.o tiger.o black_bear.o zoo.o
-	g++ zoo_tycoon.o functions.o animal.o lemur.o tiger.o black_bear.o zoo.o -o output
+output: zoo_tycoon.o animal.o lemur.o tiger.o black_bear.o zoo.o functions.o
+	g++ zoo_tycoon.o animal.o lemur.o tiger.o black_bear.o zoo.o functions.o -o output
 
 zoo_tycoon.o: zoo_tycoon.cpp
 	g++ -c zoo_tycoon.cpp
-
-functions.o: functions.cpp functions.h
-	g++ -c functions.cpp
 
 animal.o: animal.cpp animal.h
 	g++ -c animal.cpp
@@ -22,6 +19,9 @@ black_bear.o: black_bear.cpp black_bear.h
 
 zoo.o: zoo.cpp zoo.h
 	g++ -c zoo.cpp
+
+functions.o: functions.cpp functions.h
+	g++ -c functions.cpp
 
 clean:
 	rm *.o output

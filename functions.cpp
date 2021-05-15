@@ -1,5 +1,21 @@
+/********************************************************
+ * Program Filename: functions.cpp
+ * Author: Evan Garrison
+ * Date: 05/14/2021
+ * Description: implementation file for functions
+ * Input: prompts for input from user
+ * Output: input from user, a random name from a list
+ ********************************************************/
+
 #include "functions.h"
 
+/********************************************************
+ * Function:
+ * Description:
+ * Parameters:
+ * Pre-Conditions:
+ * Post-Conditions:
+ ********************************************************/
 int getInt(std::string prompt) {
     int input;
     
@@ -17,6 +33,13 @@ int getInt(std::string prompt) {
     return input;
 }
 
+/********************************************************
+ * Function:
+ * Description:
+ * Parameters:
+ * Pre-Conditions:
+ * Post-Conditions:
+ ********************************************************/
 int getIntBounds(std::string prompt, int a, int b) {
     int input;
 
@@ -30,11 +53,18 @@ int getIntBounds(std::string prompt, int a, int b) {
     return input;
 }
 
+/********************************************************
+ * Function:
+ * Description:
+ * Parameters:
+ * Pre-Conditions:
+ * Post-Conditions:
+ ********************************************************/
 std::string getRandName() {
     std::ifstream list("names.txt");
     std::string temp;
 
-    int randInt = rand() % 256;
+    int randInt = (rand() % 255) + 1;
 
     for (int i = 0; i <= randInt; i++)
         list >> temp;

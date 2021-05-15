@@ -1,3 +1,13 @@
+/********************************************************
+ * Program Filename: zoo.h
+ * Author: Evan Garrison
+ * Date: 05/14/2021
+ * Description: Header file for Zoo class
+ * Input: starting animal, animals to add to zoo
+ * Output: animals in zoo, revenue generated from zoo, 
+ * costs from animals, size of bank, random events
+ ********************************************************/
+
 #ifndef ZOO_H
 #define ZOO_H
 
@@ -7,6 +17,7 @@
 #include "functions.h"
 
 #include <iostream>
+#include <stdlib.h>
 #include <string>
 
 using namespace std;
@@ -34,6 +45,7 @@ class Zoo {
         int getNumLemurs() const;
         int getNumTigers() const;
         int getNumBBears() const;
+        int getMoney() const;
 
         void showAnimals() const;
         void showLemurs() const;
@@ -41,6 +53,16 @@ class Zoo {
         void showBBears() const;
 
         void advanceMonth();
+        void randEvent();
+        void makeRandSick();
+        void randBirth();
+
+        void addLemurs(const int &n, const int &a);
+        void removeLemur(const int &n);
+        void addTigers(const int &n, const int &a);
+        void removeTiger(const int &n);
+        void addBBears(const int &n, const int &a);
+        void removeBBear(const int &n);
 };
 
 #endif
